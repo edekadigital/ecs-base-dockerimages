@@ -19,7 +19,7 @@ ENV APP_NAME edekadigitalapp
 ENV APP_PORT 8000
 
 # Define the java options
-ENV JAVA_OPTS="-XX:+ExitOnOutOfMemoryError -XX:MinRAMPercentage=85 -XX:MaxRAMPercentage=85"
+ENV JAVA_OPTS="-XX:+ExitOnOutOfMemoryError -XX:MinRAMPercentage=90 -XX:MaxRAMPercentage=90"
 
 # Healthcheck
 HEALTHCHECK CMD curl --fail http://localhost:$APP_PORT/health || exit 1
