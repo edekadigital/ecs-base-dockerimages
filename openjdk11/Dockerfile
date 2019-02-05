@@ -19,7 +19,7 @@ ENV APP_NAME edekadigitalapp
 ENV APP_PORT 8000
 
 # Define the java options
-ENV JAVA_OPTS="$JAVA_OPTS -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Djava.awt.headless=true"
+ENV JAVA_OPTS="-XX:+ExitOnOutOfMemoryError -XX:MinRAMPercentage=90 -XX:MaxRAMPercentage=90"
 
 # Healthcheck
 HEALTHCHECK CMD curl --fail http://localhost:$APP_PORT/health || exit 1
@@ -28,4 +28,4 @@ HEALTHCHECK CMD curl --fail http://localhost:$APP_PORT/health || exit 1
 EXPOSE $APP_PORT
 
 # Run it
-CMD ["java", "$JAVA_OPTS", "-jar", "/app.jar"]
+ENTRYPOINT exec java $JAVA_OPTS -jar /app.jar
