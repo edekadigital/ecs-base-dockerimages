@@ -31,6 +31,7 @@ EXPOSE $APP_PORT
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 
+RUN mkdir /root/.ssh
 RUN touch /root/.ssh/authorized_keys
 RUN chmod 700 /root/.ssh
 RUN chmod 600 /root/.ssh/authorized_keys
