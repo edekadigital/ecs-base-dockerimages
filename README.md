@@ -1,2 +1,1 @@
-# ecs-base-openjdk11
-Base Image for ECS Tasks
+Base Images for ECS Tasks
