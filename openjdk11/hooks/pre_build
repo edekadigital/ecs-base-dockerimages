@@ -1,2 +1,5 @@
 #!/bin/bash
-docker run --rm --privileged multiarch/qemu-user-static:register --reset
+docker pull docker.io/tonistiigi/binfmt:latest
+docker image inspect docker.io/tonistiigi/binfmt:latest
+docker run --rm --privileged docker.io/tonistiigi/binfmt:latest --install all
+docker run --rm --privileged docker.io/tonistiigi/binfmt:latest
