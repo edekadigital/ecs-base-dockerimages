@@ -1,3 +1,4 @@
 #!/bin/bash
 docker buildx create --name multiarch --use
+docker buildx inspect
 docker buildx build --platform linux/amd64,linux/arm64 .
